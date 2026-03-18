@@ -1,0 +1,44 @@
+name: qm9-similitud
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.10
+  - pip
+
+  # Química
+  - rdkit=2022.09.5          # Se llama 'rdkit' en conda (no rdkit-pypi)
+
+  # Word2Vec
+  - gensim=4.3.2
+
+  # Deep learning (CPU por defecto; ver nota abajo para GPU)
+  - pytorch=2.2.0
+  - cpuonly                  # Eliminar esta línea si tienes GPU
+
+  # Reducción de dimensionalidad y clustering
+  - umap-learn=0.5.6
+  - hdbscan=0.8.38
+  - scikit-learn=1.4.1
+
+  # Datos y visualización
+  - pandas=2.2.1
+  - numpy=1.26.4
+  - scipy=1.12.0
+  - plotly=5.20.0
+  - tqdm=4.66.2
+
+  # mol2vec no está en conda: se instala via pip desde GitHub
+  - pip:
+    - git+https://github.com/samoturk/mol2vec
+
+# ============================================================
+# NOTA GPU:
+# Si tienes una GPU con CUDA 11.8, reemplaza:
+#   - pytorch=2.2.0
+#   - cpuonly
+# por:
+#   - pytorch=2.2.0
+#   - pytorch-cuda=11.8
+# ============================================================

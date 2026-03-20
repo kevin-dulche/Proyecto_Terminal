@@ -2,10 +2,10 @@
   "name": "qm9-similitud",
   "image": "mcr.microsoft.com/devcontainers/anaconda",
 
-  // Agrega esto para darle acceso a todas las GPUs disponibles
-  "runArgs": [
-    "--gpus", "all"
-  ],
+  // Esto pide la GPU de forma dinámica: si existe la usa, si no, usa el CPU.
+  "hostRequirements": {
+    "gpu": "optional"
+  },
 
   "postCreateCommand": "conda env create -f environment.yml && echo 'conda activate qm9-similitud' >> ~/.bashrc",
 

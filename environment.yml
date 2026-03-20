@@ -1,7 +1,5 @@
 name: qm9-similitud
 channels:
-  - nvidia
-  - pytorch
   - conda-forge
   - defaults
 

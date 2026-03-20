@@ -7,7 +7,7 @@
     "gpu": "optional"
   },
 
-  "postCreateCommand": "bash setup.sh",
+  "postCreateCommand": "python setup_env.py",
 
   "customizations": {
     "vscode": {

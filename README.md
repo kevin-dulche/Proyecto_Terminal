@@ -154,7 +154,7 @@ jupyter notebook notebooks/Similitud_v2.ipynb
    (Archivo → Abrir → Google Drive).
 3. En la **celda 0**, ajusta `BASE_DIR` a la ruta de tu carpeta en Drive:
    ```python
-   BASE_DIR = '/content/drive/MyDrive/proyecto'
+   BASE_DIR = '/content/drive/MyDrive/Proyecto_Terminal'
    ```
 4. Ejecuta la **celda de instalación (sección 0.1)**. Solo es necesaria
    la primera vez; las siguientes ejecuciones pueden saltarla.

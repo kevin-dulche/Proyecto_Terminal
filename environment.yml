@@ -18,11 +18,6 @@ dependencies:
   # Word2Vec
   - gensim=3.8.3
 
-  # Deep learning (CPU por defecto; ver nota abajo para GPU)
-  - pytorch=2.2.0
-  - pytorch-cuda=11.8
-  - cpuonly                  # Eliminar esta línea si tienes GPU
-
   # Reducción de dimensionalidad y clustering
   - umap-learn=0.5.6
   - hdbscan=0.8.38

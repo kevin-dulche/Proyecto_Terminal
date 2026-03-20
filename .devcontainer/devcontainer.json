@@ -7,7 +7,7 @@
     "gpu": "optional"
   },
 
-  "postCreateCommand": "conda env create -f environment.yml && echo 'conda activate qm9-similitud' >> ~/.bashrc",
+  "postCreateCommand": "bash setup.sh",
 
   "customizations": {
     "vscode": {

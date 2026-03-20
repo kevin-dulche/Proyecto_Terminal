@@ -1,8 +1,13 @@
 {
   "name": "qm9-similitud",
-  "image": "mcr.microsoft.com/devcontainers/python:3.10-bullseye",
+  "image": "mcr.microsoft.com/devcontainers/anaconda",
 
-  "postCreateCommand": "pip install --upgrade pip && pip install git+https://github.com/samoturk/mol2vec && pip install -r requirements.txt",
+  // Agrega esto para darle acceso a todas las GPUs disponibles
+  "runArgs": [
+    "--gpus", "all"
+  ],
+
+  "postCreateCommand": "conda env create -f environment.yml && echo 'conda activate qm9-similitud' >> ~/.bashrc",
 
   "customizations": {
     "vscode": {
@@ -12,17 +17,11 @@
         "ms-toolsai.jupyter-renderers"
       ],
       "settings": {
-        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "python.defaultInterpreterPath": "/opt/conda/envs/qm9-similitud/bin/python",
         "jupyter.notebookFileRoot": "${workspaceFolder}"
       }
     }
   },
 
-  "forwardPorts": [8888],
-
-  "mounts": [
-    "source=${localWorkspaceFolder},target=/workspaces/proyecto,type=bind"
-  ],
-
-  "remoteUser": "vscode"
+  "forwardPorts": [8888]
 }

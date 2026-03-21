@@ -1,7 +1,7 @@
 name: qm9-similitud
 channels:
+  - pytorch
   - conda-forge
-  - defaults
 
 dependencies:
   - python=3.8
@@ -27,6 +27,10 @@ dependencies:
   - scipy
   - plotly
   - tqdm
+
+  # Instalación de PyTorch SOLO para CPU
+  - pytorch=2.2.0
+  - cpuonly
 
   # mol2vec no está en conda: se instala via pip desde GitHub
   - pip:

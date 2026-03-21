@@ -7,7 +7,7 @@
     "gpu": "optional"
   },
 
-  "postCreateCommand": "conda env create -f environment.yml",
+  "postCreateCommand": "python setup.py",
 
   "customizations": {
     "vscode": {

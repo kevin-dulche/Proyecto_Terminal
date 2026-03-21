@@ -4,7 +4,10 @@
 
   // Esto pide la GPU de forma dinámica: si existe la usa, si no, usa el CPU.
   "hostRequirements": {
-    "gpu": "optional"
+    "gpu": "optional",
+    "cpus": 4,
+    "memory": "16gb",
+    "storage": "32gb"
   },
 
   "postCreateCommand": "python setup.py",

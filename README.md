@@ -63,6 +63,8 @@ Proyecto_Terminal/
 - ~2 GB de espacio en disco
 - RAM recomendada: 16 GB (el dataset completo ocupa ~400 MB en memoria)
 
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/kevin-dulche/Proyecto_Terminal)
+
 ---
 
 ## Opción A: Entorno con pip (Linux / macOS)

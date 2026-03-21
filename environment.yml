@@ -8,7 +8,7 @@ dependencies:
   - pip
 
   # Jupyter
-  - ipykernel                # Para Jupyter Notebooks
+  - jupyter                # Para Jupyter Notebooks
 
   # Química
   - rdkit                    # Se llama 'rdkit' en conda (no rdkit-pypi)
@@ -17,16 +17,16 @@ dependencies:
   - gensim=3.8.3
 
   # Reducción de dimensionalidad y clustering
-  - umap-learn=0.5.6
-  - hdbscan=0.8.38
-  - scikit-learn=1.4.1
+  - umap-learn
+  - hdbscan
+  - scikit-learn
 
   # Datos y visualización
-  - pandas=2.2.1
-  - numpy=1.26.4
-  - scipy=1.12.0
-  - plotly=5.20.0
-  - tqdm=4.66.2
+  - pandas
+  - numpy
+  - scipy
+  - plotly
+  - tqdm
 
   # mol2vec no está en conda: se instala via pip desde GitHub
   - pip:

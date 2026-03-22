@@ -57,74 +57,19 @@ Proyecto_Terminal/
 
 ## Requisitos previos
 
-- Python 3.10
-- pip o conda
+- Python >= 3.8
+- conda
 - Conexión a internet (para descargar el dataset y el modelo la primera vez)
-- ~2 GB de espacio en disco
-- RAM recomendada: 16 GB (el dataset completo ocupa ~400 MB en memoria)
+- Docker para la Opción A
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/kevin-dulche/Proyecto_Terminal)
 
 ---
 
-## Opción A: Entorno con pip (Linux / macOS)
+## Opción A: Codespaces
 
-```bash
-# 1. Clonar o descargar el proyecto
-git clone <url-del-repo> proyecto
-cd proyecto
+1. Abrir el siguiente link y dejar que se configure todo el contenedor, despues Ejecutar todas las celdas de Similitud.ipynb dentro de la carpeta notebooks en orden.
 
-# 2. Crear y activar un entorno virtual
-python3.10 -m venv .venv
-source .venv/bin/activate          # Linux y macOS
-
-# 3. Instalar mol2vec primero (desde GitHub, no PyPI)
-pip install git+https://github.com/samoturk/mol2vec
-
-# 4. Instalar el resto de dependencias
-pip install -r requirements.txt
-
-# 5. Abrir el notebook
-jupyter notebook notebooks/Similitud_v2.ipynb
-```
-
-> **macOS con Apple Silicon (M1/M2/M3):** PyTorch tiene soporte nativo
-> para el acelerador MPS. Puedes reemplazar `"cuda"` por `"mps"` en la
-> celda del autoencoder si quieres aprovechar la GPU integrada.
-> El resto del notebook funciona sin cambios.
-
----
-
-## Opción A.2: Entorno con pip (Windows)
-
-En Windows se recomienda usar **Anaconda Prompt** o **PowerShell**.
-`mol2vec` requiere que `git` esté instalado y disponible en el PATH
-([descargar git para Windows](https://git-scm.com/download/win)).
-
-```powershell
-# 1. Clonar o descargar el proyecto
-git clone <url-del-repo> proyecto
-cd proyecto
-
-# 2. Crear y activar un entorno virtual
-python -m venv .venv
-.venv\Scripts\activate             # PowerShell
-# o: .venv\Scripts\activate.bat   # CMD clásico
-
-# 3. Instalar mol2vec desde GitHub
-pip install git+https://github.com/samoturk/mol2vec
-
-# 4. Instalar el resto de dependencias
-pip install -r requirements.txt
-
-# 5. Abrir el notebook
-jupyter notebook notebooks/Similitud_v2.ipynb
-```
-
-> **Nota Windows:** `hdbscan` puede requerir compiladores de C++ en
-> algunos sistemas. Si la instalación falla, instala primero las
-> [Build Tools de Visual Studio](https://visualstudio.microsoft.com/visual-cpp-build-tools/)
-> y vuelve a ejecutar `pip install hdbscan==0.8.38`.
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/kevin-dulche/Proyecto_Terminal?quickstart=1)
 
 ---
 
@@ -146,6 +91,20 @@ jupyter notebook notebooks/Similitud_v2.ipynb
 >
 > **Windows:** usa Anaconda Prompt en lugar de PowerShell para los
 > comandos `conda`. El resto del proceso es idéntico.
+
+> **macOS con Apple Silicon (M1/M2/M3):** PyTorch tiene soporte nativo
+> para el acelerador MPS. Puedes reemplazar `"cuda"` por `"mps"` en la
+> celda del autoencoder si quieres aprovechar la GPU integrada.
+> El resto del notebook funciona sin cambios.
+
+> En Windows se recomienda usar **Anaconda Prompt** o **PowerShell**.
+> `mol2vec` requiere que `git` esté instalado y disponible en el PATH
+> ([descargar git para Windows](https://git-scm.com/download/win)).
+
+> **Nota Windows:** `hdbscan` puede requerir compiladores de C++ en
+> algunos sistemas. Si la instalación falla, instala primero las
+> [Build Tools de Visual Studio](https://visualstudio.microsoft.com/visual-cpp-build-tools/)
+> y vuelve a ejecutar.
 
 ---
 
@@ -175,32 +134,7 @@ jupyter notebook notebooks/Similitud_v2.ipynb
 4. El contenedor instala automáticamente todas las dependencias
    (incluido mol2vec desde GitHub) al crear el entorno.
 5. Abre `notebooks/Similitud_v2.ipynb` desde el explorador de VS Code.
-
----
-
-## Tiempos estimados de ejecución
-
-| Sección | Operación | Tiempo estimado |
-|---------|-----------|----------------|
-| 2 | Generar embeddings mol2vec (133k moléculas) | 5–15 min |
-| 4 | Entrenar autoencoder (10,000 épocas, CPU) | 20–60 min |
-| 4 | Entrenar autoencoder (10,000 épocas, GPU) | 3–8 min |
-| 8 | Calcular UMAP | ~2 min |
-| 9 | Calcular t-SNE | 10–30 min |
-
-Todas las operaciones costosas se guardan en disco y no se repiten
-si el archivo ya existe.
-
----
-
-## Dependencias críticas
-
-| Paquete | Versión | Nota |
-|---------|---------|------|
-| mol2vec | última (GitHub) | No actualizado en PyPI desde 2020 |
-| rdkit | 2022.09.5 | En conda se llama `rdkit`; en pip, `rdkit-pypi` |
-| gensim | 4.3.2 | API de Word2Vec cambió en v4; versiones < 4 son incompatibles |
-| torch | 2.2.0 | CPU por defecto; ver README para GPU |
+6. Ejecutar todas las celdas en orden.
 
 ---
 

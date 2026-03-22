@@ -60,7 +60,7 @@ Proyecto_Terminal/
 - Python >= 3.8
 - conda
 - Conexión a internet (para descargar el dataset y el modelo la primera vez)
-- Docker para la Opción A
+- Docker para la Opción D
 
 
 ---

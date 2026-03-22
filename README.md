@@ -27,7 +27,7 @@ Moléculas (SMILES)
 ```
 Proyecto_Terminal/
 ├── notebooks/
-│   └── Similitud_v2.ipynb       ← notebook principal
+│   └── Similitud.ipynb       ← notebook principal
 ├── data/                        ← se genera automáticamente al ejecutar
 │   ├── qm9.csv
 │   ├── qm9_embeddings_flat.csv
